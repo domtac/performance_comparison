@@ -1,0 +1,26 @@
+[package]
+name = "bubble_sort_rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand= "0.8.4"
+rayon= "1.5.1"
+
+[[bin]]
+name = "bubble_sort"
+path = "src/bubble_sort/main.rs"
+
+[[bin]]
+name = "insertion_sort"
+path = "src/insertion_sort/main.rs"
+
+[[bin]]
+name = "quick_sort"
+path = "src/quick_sort/main.rs"
+
+[[bin]]
+name = "par_quick_sort"
+path = "src/par_quick_sort/main.rs"
