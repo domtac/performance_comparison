@@ -2,7 +2,7 @@
 
 Unsorted collection of algorithm for the prupose of doing basic benchmarks between Rust, go and python. 
 
-My key take away is to never forget to '--release' my rust code ever again.
+My key take away is to never forget to `--release` my rust code ever again.
 
 The algorithms used here are differnet apporaches to sorting random numbers. 
 So far I have done:
@@ -44,6 +44,40 @@ The interesting effect here is, that rayon really allowed parallelism w/o signif
 | Algo | number of values | python | rust | rust (release) | go |
 |----|-----|----|-----|----|----|
 | Parallel quick sort | 100000 | 150 | 25 | 1.7 | 61 |
+
+
+## Running the tests
+
+No elaborated runner in place here. I assume that you have python3, rust and go installed on your machine.
+
+To run the tests:
+__Python__
+Navigate into the python folder and:
+```shell
+python3 bubblesort.py
+python3 insertionsort.py
+python3 quicksort.py
+python3 par_quicksort.py
+```
+
+__Golang__
+Navigate into the go folder and:
+```shell
+go run bubblesort.go
+go run insertionsort.go
+go run quicksort.go
+go run par_quicksort.go
+```
+
+__Rust__
+Stay in the root folder and:
+```shell
+cargo run --bin bubble_sort
+cargo run --bin insertion_sort
+cargo run --bin quick_sort
+cargo run --bin par_quick_sort
+```
+To get the release run add a `--release` to the above mentioned commands
 
 
 # License
