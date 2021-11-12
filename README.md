@@ -21,3 +21,10 @@ Results on MacBookPro M1 (2020)
 | Insertion | 10000 | 1400 | 1700 | 37 | 54 |
 | Quicksort | 10000 | 14.5 | 12.9 |  0.48 | 0.7 |
 | Quicksort | 100000 | - | - |  6 | 16 |
+
+
+## License
+
+Some of the code parts have been copied from example sites. The sources will be stated in the files.
+
+The rest is licensed under [WTFPL](http://www.wtfpl.net)
