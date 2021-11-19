@@ -32,18 +32,21 @@ Results on MacBookPro M1 (2020)
 | Bubble | 10000 | 5133 | 7442 | 90 | 105 |
 | Bubble | 100000 | - | - | 18231 | 11000 |
 | Insertion | 10000 | 1400 | 1700 | 37 | 54 |
-| Quicksort | 10000 | 14.5 | 12.9 |  0.48 | 0.7 |
-| Quicksort | 100000 | 180 | 140 |  6 | 16 |
+| Quicksort | 10000 | 14.5 | 12.9 |  0.48 | 0.6 |
+| Quicksort | 100000 | 180 | 140 |  6 | 9 |
 
 ### Bonus: Parallel quick sort
 
 As the manufacturers of my  laptop where so kind to provide me with several computation cores, I was willing to try a parallel quicksort to speed up the sorting even more. Another reason is that I wanted to try out the [rayon](https://crates.io/crates/rayon/1.2.1) crate.
 
-The interesting effect here is, that rayon really allowed parallelism w/o significant overhead, whereas the parallel inplementation in go or python had little effect. For Go the parallelism even made it slower.
+The interesting effect here is, that rayon really allowed parallelism w/o significant overhead, whereas the parallel inplementation in python had little effect.
 
-| Algo | number of values | python | rust | rust (release) | go |
+| Algo | number of values | python | rust | rust (release) | go (GOMAXPROCS=8) |
 |----|-----|----|-----|----|----|
-| Parallel quick sort | 100000 | 150 | 25 | 1.7 | 61 |
+| Parallel quick sort | 100000 | 150 | 25 | 1.7 | 2 |
+
+As a note, goroutines in theory do take double the cores into account compared to rayon, as rayon only runs on physical cores and goroutines can leverage hyperthreading.
+If I reduce 'runtime.GOMAXPROCS' to the number of my physical cores, the time taken goes up to roughly 3ms.
 
 
 ## Running the tests

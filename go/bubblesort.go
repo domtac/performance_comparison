@@ -8,12 +8,11 @@ import (
 
 func main() {
 
-	slice := generateSlice(20001)
+	slice := generateSlice(10000)
 	start := time.Now()
 	bubblesort(slice)
 	elapsed := time.Since(start)
 	fmt.Println("\n--- Bubble sort of ", len(slice) ,"in ---\n\n", elapsed, "\n")
-    fmt.Println(slice)
 }
 
 // Generates a slice of size, size filled with random numbers

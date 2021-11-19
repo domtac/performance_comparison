@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	slice := generateSlice(10001)
+	slice := generateSlice(100001)
 	start := time.Now()
 	insertionsort(slice)
 	elapsed := time.Since(start)
