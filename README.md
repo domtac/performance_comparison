@@ -45,8 +45,7 @@ The interesting effect here is, that rayon really allowed parallelism w/o signif
 |----|-----|----|-----|----|----|
 | Parallel quick sort | 100000 | 150 | 25 | 1.7 | 2 |
 
-As a note, goroutines in theory do take double the cores into account compared to rayon, as rayon only runs on physical cores and goroutines can leverage hyperthreading.
-If I reduce 'runtime.GOMAXPROCS' to the number of my physical cores, the time taken goes up to roughly 3ms.
+
 
 
 ## Running the tests
